@@ -36,7 +36,7 @@
 #define LIBPULSE_SIMPLE		"libpulse-simple.so.0"
 
 #ifdef __NR_memfd_create
-static inline int memfd_create(const char *name, unsigned int flags) {
+inline int memfd_create(const char *name, unsigned int flags) {
 	return syscall(__NR_memfd_create, name, flags);
 }
 #else
